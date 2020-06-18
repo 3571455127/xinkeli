@@ -56,7 +56,27 @@ $(function () {
         },
     })
 
+    // top
+    $(window).scroll(function () {
+        if ($(window).scrollTop() > 10) {
+            $(".top-bar").hide();
+            $(".header-one").hide();
+            $("header .navs").addClass("fixed");
+            $(".scroll-top").slideDown(600);
+        } else {
+            $(".top-bar").show();
+            $(".header-one").show();
+            $("header .navs").removeClass("fixed");
+            $(".scroll-top").hide(600);
+        }
+    });
+    $(".scroll-top").click(function () {
+        $("html,body").animate({
+            scrollTop: 0
+        }, 1000);
+    });
 
+    // 头部导航
     $(".level>li").hover(function () {
         $(this).find(".secondary").slideDown(500)
     }, function () {

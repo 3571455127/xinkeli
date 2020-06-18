@@ -347,6 +347,27 @@ header .navs .navsbg {
     position: relative;
 }
 
+.secondary li::after {
+    content: '';
+    width: 0px;
+    height: 100%;
+    line-height: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-color: #001a57;
+    transition: all .5s;
+    z-index: -1;
+}
+
+.secondary li:hover::after {
+    width: 100%;
+}
+
+.secondary>li:hover>a {
+    color: #fff;
+}
+
 .secondary a {
     text-transform: uppercase;
     display: block;
@@ -368,6 +389,10 @@ header .navs .navsbg {
     -webkit-box-shadow: 0px 13px 25px -12px rgba(0, 0, 0, 0.25);
     -moz-box-shadow: 0px 13px 25px -12px rgba(0, 0, 0, 0.25);
     box-shadow: 0px 13px 25px -12px rgba(0, 0, 0, 0.25);
+}
+
+.third li:hover a {
+    color: #fff;
 }
 
 .level .secondary .fa-angle-down {
@@ -438,10 +463,225 @@ header .navs .navsbg {
 }
 
 
+@-webkit-keyframes menu_sticky {
+    0% {
+        margin-top: -75px;
+        opacity: 0;
+    }
+
+    50% {
+        margin-top: -64px;
+        opacity: 0;
+    }
+
+    100% {
+        margin-top: 0;
+        opacity: 1;
+    }
+}
+
+@keyframes menu_sticky {
+    0% {
+        margin-top: -75px;
+        opacity: 0;
+    }
+
+    50% {
+        margin-top: -64px;
+        opacity: 0;
+    }
+
+    100% {
+        margin-top: 0;
+        opacity: 1;
+    }
+}
+
+.theme-menu-wrapper.fixed {
+    position: fixed !important;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    background: #000f32;
+    margin: 0;
+    padding-top: 0;
+    box-shadow: 0px 13px 35px -12px rgba(35, 35, 35, 0.15);
+    -webkit-animation: menu_sticky 0.7s ease-in-out;
+    animation: menu_sticky 0.7s ease-in-out;
+}
+
+.header-two .theme-menu-wrapper.fixed {
+    background: #fff;
+}
+
 /* header */
 
 
+/* footer */
 
+.scroll-top {
+    width: 25px;
+    height: 25px;
+    position: fixed;
+    bottom: 10px;
+    right: 5px;
+    z-index: 99;
+    text-align: center;
+    color: #fff;
+    font-size: 18px;
+    display: none;
+    cursor: pointer;
+    border-radius: 3px;
+    background-color: #001a57;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    display: block;
+    padding: 0;
+    cursor: pointer;
+    display: none;
+}
+
+footer .content {
+    padding: 70px 0;
+    background: #001648;
+}
+
+footer img {
+    max-width: 100%;
+    height: auto;
+}
+
+footer .footer-logo {
+    margin-bottom: 12px;
+}
+
+footer .footer-logo img {
+    width: 240px;
+
+}
+
+footer .widget p {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #9ca6bf;
+}
+
+footer .widget .queries {
+    color: #fff;
+    margin-top: 25px;
+    font-size: 16px;
+}
+
+footer .widget .queries span {
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+footer .widget .queries a {
+    color: #fff;
+}
+
+footer .title {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+footer .recent li {
+    padding: 6px 0 20px 0;
+    margin-bottom: 14px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+footer .recent li img {
+    width: 70px;
+    height: 70px;
+    border-radius: 5px;
+}
+
+footer .recent .post {
+    width: calc(100% - 70px);
+    padding-left: 20px;
+}
+
+footer .recent .post a {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 14px;
+    color: #fff;
+    line-height: 24px;
+    margin-top: -5px;
+}
+
+footer .recent .post .date {
+    font-size: 13px;
+    color: #9ca6bf;
+    font-style: italic;
+    margin-top: 5px;
+}
+
+footer .recent .post i {
+    margin-right: 5px;
+    font-size: 13px;
+}
+
+footer .footer-list .box li {
+    line-height: 32px;
+    padding-left: 20px;
+    position: relative;
+}
+
+footer .footer-list .box li::after {
+    content: "";
+    width: 10px;
+    height: 10px;
+    display: block;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0px;
+    border: 2px solid rgb(156, 166, 191);
+}
+
+footer .footer-list .box a {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 15px;
+    color: #9ca6bf;
+}
+
+footer .info {
+    background: #001138;
+    padding: 15px 0;
+}
+
+footer .info .left {
+    color: #9ca6bf;
+    line-height: 25px;
+    font-size: 14px;
+}
+
+footer .info .right {
+    text-align: right;
+}
+
+footer .info .right li {
+    display: inline-block;
+    line-height: 25px;
+}
+
+footer .info .right a {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 14px;
+    color: #9ca6bf;
+    margin-left: 35px;
+}
+
+
+/* footer */
 
 
 
