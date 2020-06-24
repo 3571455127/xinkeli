@@ -1,4 +1,32 @@
 $(function () {
+    // index testimonial-section
+    var mySwiper = new Swiper('.testimonial-section .swiper-container', {
+        autoplay: true,
+        loop: true,
+        speed: 1200,
+        pagination: {
+            el: '.testimonial-section .swiper-pagination',
+            clickable: true
+        }
+    })
+    // index-news
+    var mySwiper = new Swiper('.index-news .swiper-container', {
+        autoplay: true,
+        slidesPerView: 3,
+        spaceBetween: 20,
+        loop: true,
+        speed: 1200,
+    })
+    // index partners
+    var mySwiper = new Swiper('.partners .swiper-container', {
+        autoplay: true,
+        slidesPerView: 5,
+        spaceBetween: 20,
+        loop: true,
+        speed: 1200,
+    })
+
+
     // about-who
     var mySwiper = new Swiper('.about-who .swiper-container', {
         autoplay: true,
