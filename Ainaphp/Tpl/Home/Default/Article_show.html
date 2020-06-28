@@ -1,0 +1,91 @@
+<include file="Home:path" />
+
+    <!-- news-show -->
+    <div class="news-show">
+        <div class="news-show-box container">
+            <div class="row">
+                <div class="clearfix">
+                    <div class="left col-lg-9 col-md-9 col-sm-12">
+                        <!-- 内容 -->
+                        <div class="article">
+                            <img src="{$thumb}" alt="{$title}">
+                            <div class="dg-header">
+                                <h5>{$title}</h5>
+                                <div class="time">{$createtime|toDate=###,'d'} {$createtime|toDate=###,'M'} {$createtime|toDate=###,'Y'}</div>
+                            </div>
+                            <div class="content">
+                               {$content}
+                            </div>
+                        </div>
+                        <!-- 推荐新闻 -->
+                        <div class="article-related">
+                            <h5>Related News</h5>
+                            <div class="article-related-box clearfix">
+                                <YP:list order="listorder desc" catid="110" id="r" posid="1" limit="4">  
+                                <a href="{$r.url}" title="{$r.title}" class="col-lg-6 col-md-6 col-sm-6">
+                                    <strong class="time">[{$r.createtime|toDate=###,'Y-m-d'}]</strong>
+                                    <span>{$r.title|str_cut=###,30,'...'}</span>
+                                </a>
+                                </YP:list> 
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="nav-right col-lg-3 col-md-3 col-sm-12">
+                        <form  action="{:U('Search/index')}" method="GET">
+                        <!-- 搜索 -->
+                        <div class="aside-search">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Search for..."  name="keyword">
+                                <input type="hidden" name="module" value="Product">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default btn-primary" type="submit">button</button>
+                                </span>
+                            </div>
+                        </div>
+                        </form>
+                        <div class="sidebar-nav" id="icos">
+                            <ul class="first-nav">
+                                <li><a href="/index.php">Home</a></li>
+                                <YP:subcat catid="73" id="r" where="listorder asc" limit="100" key="n">
+                                <li>
+<a href="{if $r[child] == 1}javascript:;{else}{$r.url}{/if}" title="{$r.catname}">{$r.catname} {if $r[child] == 1}<i class="fa fa-angle-right"></i>{/if}</a>
+{if $r[child] == 1}
+                                    <ul class="second-nav">
+                                        <YP:subcat catid="$r[id]" id="rs">
+                                        <li>
+<a href="{if $rs[child] == 1}javascript:;{else}{$rs.url}{/if}" title="{$rs.catname}">{$rs.catname} {if $rs[child] == 1}<i class="fa fa-angle-right"></i>{/if}</a>
+                                                {if $rs[child] == 1}
+                                            <ul class="three_nav">
+                                                <YP:subcat catid="$rs[id]" id="rss">
+                                                    <li><a href="{$rss.url}" title="{$rss.catname}">{$rss.catname}</a></li>
+                                                    </YP:subcat>
+                                            </ul>
+                                                {/if}
+                                        </li>
+                                        </YP:subcat>
+                                    </ul>
+{/if}
+                                </li>
+                                </YP:subcat>
+                            </ul>
+                        </div>
+
+                        <ul class="digood-related">
+<YP:list name='product' posid="1" order="listorder asc" limit="5" id="r" field="title,thumb,url">
+                            <li><a href="{$r.url}" title="{$r.title}" class="clearfix">
+                                    <img class="col-lg-4 col-md-4 col-sm-4 col-xs-4" src="{$r.thumb}" alt="{$r.title}">
+                                    <h6 class="col-lg-8 col-md-8 col-sm-8 col-xs-8">{$r.title|str_cut=###,25,'...'}</h6>
+                                </a>
+                            </li>
+</YP:list>
+
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <meta name="keywords" content="{$seo_keywords}" />
+    <meta name="description" content="{$seo_description}" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+    <!-- wap -->
+    <meta name="wap-font-scale" content="no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="format-detection" content="telephone=yes" />
+    <meta name="Robots" content="all">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <title>{if MODULE_NAME != 'Index'}{$seo_title}{else}{$site_name}{/if}</title>
+
+    <!-- css -->
+    <link rel="stylesheet" href="__PUBLIC__/www/css/bootstrap.min.css">
+    <link rel="stylesheet" href="__PUBLIC__/www/css/swiper.min.css">
+    <link rel="stylesheet" href="__PUBLIC__/www/css/font-awesome.min.css">
+    <link rel="stylesheet" href="__PUBLIC__/www/css/animate.min.css">
+    <link rel="stylesheet" href="__PUBLIC__/www/css/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="__PUBLIC__/www/css/main.css">
+    <script type="text/javascript" src="__PUBLIC__/www/js/jquery-3.3.1.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="top-bar">
+            <div class="container">
+                <div class="row">
+                    <h1>We are leading consultant firm!</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="header-one">
+            <div class="top-header">
+                <div class="container clearfix">
+                    <div class="logo pull-left">
+                        <a href="#"><img
+                                src="http://themes.digoodcms.com/logo/svg?main_color=061538&amp;sub_color=537590&amp;text_color=555"
+                                alt="" width="240"></a>
+                    </div>
+                    <div class="address-wrapper pull-right">
+                        <ul>
+                            <li class="address">
+                                <i class="icon fa fa-phone"></i>
+                                <h6>Phone:</h6>
+                                <p>10-00000-123</p>
+                            </li>
+                            <li class="address">
+                                <i class="icon fa fa-envelope"></i>
+                                <h6>Mail us:</h6>
+                                <p>supporthere@mail.com</p>
+                            </li>
+                            <li class="address">
+                                <i class="icon fa fa-skype"></i>
+                                <h6>Skype:</h6>
+                                <p>supporthere</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="navs">
+            <div class="container">
+                <div class="row">
+                    <div class="navsbg clearfix">
+                        <div class="pull-left">
+                            <ul class="level">
+                                <li><a href="/index.php">hoem</a></li>
+                                <YP:subcat catid="0" id="r" where="listorder asc" limit="150" key="n">
+                                    <if condition="!in_array($r[id],array(108,103))">
+                                <li>
+                                    <a href="{$r.url}" title="{$r.catname}">{$r.catname}</a>
+                                    {if $r[child] == 1}
+                                    <i class="fa fa-angle-down" aria-hidden="true"></i>
+                                    <ul class="secondary">
+                                        <YP:subcat catid="$r[id]" where="listorder asc" id="rs">
+                                        <li>
+                                            <a href="{$rs.url}" title="{$rs.catname}">{$rs.catname}</a>
+                                            {if $rs[child] == 1}
+                                            <i class="fa fa-angle-down" aria-hidden="true"></i>
+                                            <ul class="third">
+                                                <YP:subcat catid="$rs[id]" where="listorder asc" id="rss">
+                                                <li><a href="{$rss.url}"
+                                                                title="{$rss.catname}">{$rss.catname}</a></li>
+                                                </YP:subcat>
+                                            </ul>
+                                            {/if}
+                                        </li>
+                                        </YP:subcat>
+                                    </ul>
+                                    {/if}
+                                </li>
+                                </if>
+                                </YP:subcat>
+                            </ul>
+
+                        </div>
+                        <div class="pull-right">
+                            <button type="button" class="dropdown-toggle" data-toggle="dropdown"
+                                aria-expanded="false"><i class="fa fa-search" aria-hidden="true"></i></button>
+                            <form action="#" class="dropdown-menu">
+                                <input type="text" placeholder="Enter Your Search">
+                                <button><i class="fa fa-search"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </header>

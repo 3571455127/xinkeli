@@ -1,0 +1,62 @@
+<div class="product-nav">
+                        <!--search -->
+                        <div class="product-search">
+                            <form  action="{:U('Search/index')}" method="GET">
+                                <input type="search" placeholder="Search..." name="keyword">
+                                <input type="hidden" name="module" value="Product">
+                                <button type="submit">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </form>
+                        </div>
+
+                        <div class="menu">
+                            <h3>Categorys</h3>
+
+                            <div class="sidebar-nav">
+                                <ul class="first-nav">
+                                    <li><a href="/index.php">Home</a></li>
+                                    <YP:subcat catid="73" id="r" where="listorder asc" limit="100" key="n">
+                                    <li>
+                                        <a href="{if $r[child] == 1}javascript:;{else}{$r.url}{/if}" title="{$r.catname}">{$r.catname} {if $r[child] == 1}<i class="fa fa-sort-down"></i>{/if}</a>
+{if $r[child] == 1}
+                                        <ul class="second-nav">
+                                            <YP:subcat catid="$r[id]" id="rs">
+                                            <li>
+                                                <a href="{if $rs[child] == 1}javascript:;{else}{$rs.url}{/if}" title="{$rs.catname}">{$rs.catname} {if $rs[child] == 1}<i class="fa fa-sort-down"></i>{/if}</a>
+                                                {if $rs[child] == 1}
+                                                <ul class="three_nav">
+                                                     <YP:subcat catid="$rs[id]" id="rss">
+                                                    <li><a href="{$rss.url}" title="{$rss.catname}">{$rss.catname}</a></li>
+                                                    </YP:subcat>
+                                                </ul>
+                                                {/if}
+                                            </li>
+                                            </YP:subcat>
+                                        </ul>
+{/if}
+                                    </li>
+                                    </YP:subcat>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="hot">
+                            <h3>HOT PRODUCT</h3>
+                            <div class="aside-product">
+<YP:list name='product' posid="1" order="listorder asc" limit="5" id="r" field="title,thumb,url">
+                                <!-- start -->
+                                <a href="{$r.url}" title="{$r.title}" class="media">
+                                    <div class="box-img">
+                                        <img src="{$r.thumb}" alt="{$r.title}">
+                                    </div>
+                                    <p>{$r.title|str_cut=###,25,'...'}</p>
+                                </a>
+                                <!-- end -->
+</YP:list>
+
+                            </div>
+
+                        </div>
+
+                    </div>

@@ -1,0 +1,103 @@
+<include file="Home:path" />
+
+    <div class="video">
+        <div class="container">
+            <div class="row">
+                <div class="list clearfix">
+                     <volist name="list" id="r" listorder="desc">
+                    <!-- start -->
+                    <div class="col-lg-3 col-md-3 col-sm-3">
+                        <div class="box">
+                            <a data-fancybox="gallery" href="{$r.videourl}">
+                                <div class="box-img"><img  src="{$r.thumb}" alt="{$r.title}"></div>
+                                <p>{$r.title|str_cut=###,25,'...'}</p>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- end -->
+                    </volist>
+
+                </div>
+                <!--分页按钮-->
+                 <div class="row" style="margin: 3% 0 5% 0">
+                            <div class="col-xs-12 text-center pagingClick">
+                                {$pages}
+                            </div>
+                        </div> 
+                <hr>
+                <!-- 推荐列表 -->
+                <div class="recommend">
+                    <h5> Recommend Products</h5>
+                    <div class="box">
+                        <div class="swiper-container">
+                            <div class="swiper-wrapper">
+<YP:list name='product' posid="1" order="listorder asc" limit="5" id="r" field="title,thumb,url,description">
+   <div class="swiper-slide">
+        <a href="{$r.url}" title="{$r.title}">
+            <div class="box-img"><img src="{$r.thumb}" alt="{$r.title}"></div>
+            <h6>{$r.title|str_cut=###,25,'...'}</h6>
+            <p>{$r.description|str_cut=###,25,'...'}</p>
+        </a>
+        <div class="recommend-btn clearfix">
+            <div type="button" class="btn1" data-toggle="modal" data-target="#myModal">
+                Quick Inquiry
+            </div>
+            <a href="{$r.url}" title="{$r.title}" target="_blank" class="btn2"> View Details</a>
+        </div>
+    </div>
+</YP:list>   
+                                
+                                
+                            </div>
+                            <div class="swiper-pagination"></div>
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-button-next"></div>
+                        </div>
+                    </div>
+
+                    <!-- 弹窗表单 -->
+                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                            aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="myModalLabel">Quick Inquiry</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <form class="clearfix" method="post" action="index.php?g=Home&amp;a=message"
+                                        onsubmit="return beforeSubmit2(this);">
+                                        <div class="modal-box">
+                                            <p>Name: </p>
+                                            <input placeholder="Name" type="text" name="name">
+                                        </div>
+                                        <div class="modal-box">
+                                            <p>E-mail: </p>
+                                            <input placeholder="Email" type="text" name="email">
+                                        </div>
+                                        <div class="modal-box">
+                                            <p>Phone Number:</p>
+                                            <input placeholder="Phone" type="text" name="phone">
+                                        </div>
+                                        <div class="modal-box">
+                                            <p>Consulting Information:</p>
+                                            <textarea rows="3" placeholder="Please enter your consulting information."
+                                                name="message"></textarea>
+                                        </div>
+                                        <input type="submit" value="Send Inquiry" class="footer-sub">
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
