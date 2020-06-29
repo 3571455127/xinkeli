@@ -159,6 +159,7 @@ h6 {
 .banner_link {
     background: #f1f1f1;
     border-bottom: 1px solid #d3d3d3;
+    margin-top: 42px;
 }
 
 .banner_link .b_crum_link_inner a {
@@ -224,7 +225,7 @@ header .top-bar h1 {
 
 .header-one .top-header {
     background: #fff;
-    padding: 40px 0 32px 0;
+    padding: 20px 0;
 }
 
 .header-one .top-header .address-wrapper li {
@@ -328,6 +329,12 @@ header .navs .navsbg {
     color: #8f97ab;
 
 }
+
+.level>li:hover>a,
+.level>li:hover .fa-angle-down {
+    color: #fff;
+}
+
 
 .secondary {
     display: none;
@@ -683,6 +690,147 @@ footer .info .right a {
 
 /* footer */
 
+/* banner start */
+.banner .camera_wrap {
+    margin-top: -42px;
+}
+
+
+#camera_demo {
+    margin: 0 !important;
+}
+
+.camera_wrap {
+    float: none;
+}
+
+#camera_demo .camera_overlayer {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 26, 27, 0.10);
+}
+
+#camera_demo .main-container {
+    position: relative;
+}
+
+#camera_demo .camera_caption {
+    height: 100%;
+}
+
+#camera_demo .container {
+    position: relative;
+    z-index: 1;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+#camera_demo .camera_caption>div {
+    background: transparent;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    text-shadow: none;
+    left: 0;
+    padding: 0;
+}
+
+#camera_demo .camera_caption h1 {
+    text-transform: uppercase;
+    padding: 30px 0 35px 0;
+    color: #001a57;
+    font-size: 54px;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+#camera_demo .camera_caption p {
+    font-size: 26px;
+    line-height: 35px;
+    color: #556382;
+    font-weight: 300;
+}
+
+#camera_demo .camera_caption .theme-button-one {
+    background: #fff;
+    line-height: 50px;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 5px;
+    padding: 0 35px;
+    display: inline-block;
+    color: #000f32;
+}
+
+#camera_demo .camera_caption .theme-button-one:hover {
+    color: #fff;
+    background-color: #000f32;
+}
+
+
+#camera_demo .camera_pag {
+    position: absolute;
+    height: 100%;
+    top: 0;
+    left: 3%;
+    z-index: 9;
+}
+
+#camera_demo .camera_pag .camera_pag_ul {
+    text-align: center;
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+#camera_demo .camera_pag .camera_pag_ul li {
+    display: block;
+    margin: 15px 0;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    border-width: 1px;
+}
+
+#camera_demo .camera_pag .camera_pag_ul li span {
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+}
+
+#camera_demo .camera_pag .camera_pag_ul li:hover span {
+    background-color: #434648;
+}
+
+#camera_demo .camera_caption {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+
+.camera_fakehover {
+    min-height: 150px !important;
+}
+
+.camera_loader {
+    width: 70px;
+    height: 70px;
+}
+
+/* banner end*/
+
 /* idnex   */
 
 .index img {
@@ -759,6 +907,10 @@ footer .info .right a {
 .index .index-about {
     margin-bottom: 50px;
     text-align: center;
+}
+
+.index .index-about .index-aboutbox {
+    margin-bottom: 60px;
 }
 
 .index h3 {
@@ -882,7 +1034,7 @@ footer .info .right a {
 }
 
 .index .index-services .list .box .txt {
-    padding: 15px 15px 15px 25px;
+    padding: 15px 15px 19px 25px;
 }
 
 .index .index-services .list h6 {
@@ -905,7 +1057,7 @@ footer .info .right a {
 }
 
 .index .index-services .list .box .txt {
-    min-height: 130px;
+    /* min-height: 130px; */
 }
 
 .index .index-services .list .box i {
@@ -1321,7 +1473,7 @@ footer .info .right a {
 }
 
 .index .consulation form textarea {
-    padding: 0 15px;
+
     width: 100%;
     max-width: 100%;
     height: 110px;
@@ -1331,6 +1483,8 @@ footer .info .right a {
     border-bottom: 1px solid #dfdfdf;
     font-size: 16px;
     margin-bottom: 32px;
+    outline: none;
+
 }
 
 .index .consulation form input::-webkit-input-placeholder,
@@ -2852,3 +3006,95 @@ hr {
 }
 
 /* product-show */
+
+/* faq */
+.faq {
+    padding: 50px 0;
+}
+
+.faq h5 {
+    font-size: 20px;
+    font-weight: bold;
+    position: relative;
+    padding-bottom: .5em;
+    margin-bottom: .5em;
+    color: #383838;
+    position: relative;
+}
+
+.faq h5::after {
+    content: '';
+    position: absolute;
+    height: 3px;
+    width: 50px;
+    bottom: 0;
+    left: 0;
+    background-color: #0062cc;
+}
+
+.faqBox,
+.infos {
+    margin-top: 50px;
+}
+
+.faq img {
+    max-width: 100%;
+    height: auto;
+}
+
+.faqBox li {
+    cursor: pointer;
+    border: 1px solid #e6e6e6;
+    margin-bottom: 8px;
+    font-size: 14px;
+    border-radius: 4px;
+}
+
+
+.faqBox .pore {
+    font-weight: 600;
+    height: 40px;
+    line-height: 40px;
+    box-sizing: border-box;
+}
+
+.faqBox .pore .num {
+    text-align: center;
+    padding-right: 0;
+    padding-left: 0;
+    background-color: #efefef;
+    border-right: 1px solid rgba(0, 0, 0, 0.1)
+}
+
+.faqBox .submenu {
+    display: none;
+}
+
+.faqBox .submenu .txt {
+    padding: 15px;
+}
+
+@media screen and (max-width: 768px) {
+    .faqBox>ul>li .pore {
+        height: 40px;
+        line-height: 1.4;
+    }
+
+    .faqBox>ul>li .pore .num {
+        height: 40px;
+        line-height: 40px;
+    }
+}
+
+.faq .infos i {
+    float: left;
+    width: 43px;
+    height: 43px;
+    background: #003166;
+    color: #fff;
+    line-height: 43px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+/* faq */

@@ -132,50 +132,92 @@
         </div>
     </div>
 
-    <div class="video">
+    <div class="contact">
         <div class="container">
             <div class="row">
-                <div class="list clearfix">
-                     <?php if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$r): $mod = ($i % 2 );++$i;?><!-- start -->
-                    <div class="col-lg-3 col-md-3 col-sm-3">
-                        <div class="box">
-                            <a data-fancybox="gallery" href="<?php echo ($r["videourl"]); ?>">
-                                <div class="box-img"><img  src="<?php echo ($r["thumb"]); ?>" alt="<?php echo ($r["title"]); ?>"></div>
-                                <p><?php echo (str_cut($r["title"],25,'...')); ?></p>
-                            </a>
+                <div class="clearfix">
+                    <div class="left col-lg-8 col-md-8 col-sm-8">
+                        <h5>Get In Touch</h5>
+                        <form class="clearfix" method="post" action="index.php?g=Home&amp;a=message"
+                            onsubmit="return beforeSubmit2(this);">
+                            <div class="box clearfix">
+                                <div class="col-lg-3 col-md-3">name:</div>
+                                <div class="col-lg-9"> <input class="form-control" placeholder="Name" type="text"
+                                        name="name"></div>
+                            </div>
+                            <div class="box clearfix">
+                                <div class="col-lg-3">Email:</div>
+                                <div class="col-lg-9"><input class="form-control" placeholder="Email" type="text"
+                                        name="email"></div>
+                            </div>
+                            <div class="box clearfix">
+                                <div class="col-lg-3">Phone:</div>
+                                <div class="col-lg-9"> <input class="form-control" placeholder="Phone" type="text"
+                                        name="phone"></div>
+                            </div>
+                            <div class="box clearfix">
+                                <div class="col-lg-3">Message:</div>
+                                <div class="col-lg-9"> <textarea class="form-control" rows="3" name="message"
+                                        placeholder="Message ..."></textarea></div>
+                            </div>
+                            <input type="submit" value="Send Inquiry" class="footer-sub">
+                        </form>
+
+
+                    </div>
+                    <div class="right col-lg-4 col-md-6 col-sm-4">
+                        <div class="contactItem">
+                            <i class="fa fa-phone fa-2x"></i>
+                            <h5>Telephone</h5>
+                            <p><?php echo ($phone); ?></p>
+                            <!--<p>0769-83077752</p>-->
+                        </div>
+                        <div class="contactItem">
+                            <i class="fa fa-mobile fa-3x"></i>
+                            <h5>Mobilephone</h5>
+                            <p><?php echo ($shouji); ?></p>
+                            <p><?php echo ($shoujia); ?></p>
+                        </div>
+                        <div class="contactItem">
+                            <i class="fa fa-envelope fa-2x"></i>
+                            <h5>E-mail</h5>
+                            <p><?php echo ($email); ?></p>
+                            <p><?php echo ($emaila); ?></p>
+                        </div>
+                        <div class="contactItem">
+                            <i class="fa fa-skype fa-2x"></i>
+                            <h5>Skype</h5>
+                            <p><?php echo ($Skype); ?></p>
+                            <!--<p>DIGOOD_template</p>-->
                         </div>
                     </div>
-                    <!-- end --><?php endforeach; endif; else: echo "" ;endif; ?>
-
                 </div>
-                <!--分页按钮-->
-                 <div class="row" style="margin: 3% 0 5% 0">
-                            <div class="col-xs-12 text-center pagingClick">
-                                <?php echo ($pages); ?>
-                            </div>
-                        </div> 
+
                 <hr>
+
                 <!-- 推荐列表 -->
                 <div class="recommend">
                     <h5> Recommend Products</h5>
                     <div class="box">
                         <div class="swiper-container">
                             <div class="swiper-wrapper">
-<?php  $_result=M("product")->field("title,thumb,url,description")->where(" 1  and lang=1 AND status=1   AND posid =1")->order("listorder asc")->limit("5")->select();; if ($_result): $i=0;foreach($_result as $key=>$r):++$i;$mod = ($i % 2 );?><div class="swiper-slide">
-        <a href="<?php echo ($r["url"]); ?>" title="<?php echo ($r["title"]); ?>">
-            <div class="box-img"><img src="<?php echo ($r["thumb"]); ?>" alt="<?php echo ($r["title"]); ?>"></div>
-            <h6><?php echo (str_cut($r["title"],25,'...')); ?></h6>
-            <p><?php echo (str_cut($r["description"],25,'...')); ?></p>
-        </a>
-        <div class="recommend-btn clearfix">
-            <div type="button" class="btn1" data-toggle="modal" data-target="#myModal">
-                Quick Inquiry
-            </div>
-            <a href="<?php echo ($r["url"]); ?>" title="<?php echo ($r["title"]); ?>" target="_blank" class="btn2"> View Details</a>
-        </div>
-    </div><?php endforeach; endif;?>   
-                                
-                                
+<?php  $_result=M("product")->field("title,thumb,url,description,createtime")->where(" 1  and lang=1 AND status=1   AND posid =1")->order("listorder asc")->limit("5")->select();; if ($_result): $i=0;foreach($_result as $key=>$r):++$i;$mod = ($i % 2 );?><!-- start -->
+                                <div class="swiper-slide">
+                                    <a href="<?php echo ($r["url"]); ?>" title="<?php echo ($r["title"]); ?>">
+                                        <div class="box-img"><img src="<?php echo ($r["thumb"]); ?>" alt="<?php echo ($r["title"]); ?>"></div>
+                                    </a>
+                                    <h6><?php echo (str_cut($r["title"],25,'...')); ?></h6>
+                                    <div class="mate">
+                                        <span><i class="fa fa-bookmark"></i> <a href="<?php echo ($r["url"]); ?>" title="<?php echo ($r["title"]); ?>">News</a></span>
+                                        <!--<span><i class="fa fa-user"></i> <a href="<?php echo ($r["url"]); ?>" title="<?php echo ($r["title"]); ?>">Digood</a></span>-->
+                                        <span><i class="fa fa-clock-o"></i> <a href="<?php echo ($r["url"]); ?>" title="<?php echo ($r["title"]); ?>"><?php echo (todate($r["createtime"],'d')); ?> <?php echo (todate($r["createtime"],'M')); ?> <?php echo (todate($r["createtime"],'Y')); ?></a></span>
+                                    </div>
+                                    <hr>
+                                    <a href="<?php echo ($r["url"]); ?>" title="<?php echo ($r["title"]); ?>">
+                                        <p><?php echo (str_cut($r["description"],125,'...')); ?></p>
+                                    </a>
+                                </div>
+                                <!-- end --><?php endforeach; endif;?>
                             </div>
                             <div class="swiper-pagination"></div>
                             <div class="swiper-button-prev"></div>
@@ -183,50 +225,11 @@
                         </div>
                     </div>
 
-                    <!-- 弹窗表单 -->
-                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                                            aria-hidden="true">&times;</span></button>
-                                    <h4 class="modal-title" id="myModalLabel">Quick Inquiry</h4>
-                                </div>
-                                <div class="modal-body">
-                                    <form class="clearfix" method="post" action="index.php?g=Home&amp;a=message"
-                                        onsubmit="return beforeSubmit2(this);">
-                                        <div class="modal-box">
-                                            <p>Name: </p>
-                                            <input placeholder="Name" type="text" name="name">
-                                        </div>
-                                        <div class="modal-box">
-                                            <p>E-mail: </p>
-                                            <input placeholder="Email" type="text" name="email">
-                                        </div>
-                                        <div class="modal-box">
-                                            <p>Phone Number:</p>
-                                            <input placeholder="Phone" type="text" name="phone">
-                                        </div>
-                                        <div class="modal-box">
-                                            <p>Consulting Information:</p>
-                                            <textarea rows="3" placeholder="Please enter your consulting information."
-                                                name="message"></textarea>
-                                        </div>
-                                        <input type="submit" value="Send Inquiry" class="footer-sub">
-                                    </form>
-                                </div>
-                                <div class="modal-footer">
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
                 </div>
-
             </div>
-
         </div>
+
 
     </div>
 

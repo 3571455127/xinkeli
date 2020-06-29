@@ -1,4 +1,24 @@
 $(function () {
+    //  banner
+    var banner = $("#camera_demo");
+    if (banner.length) {
+        banner.camera({
+            height: '750px',
+            pagination: true,
+            navigation: false,
+            thumbnails: false,
+            playPause: false,
+            pauseOnClick: false,
+            autoPlay: true,
+            hover: false,
+            overlayer: true,
+            loader: 'none',
+            minHeight: '400px',
+            time: 6000,
+            loaderPadding: 10,
+        });
+    };
+
     // index testimonial-section
     var mySwiper = new Swiper('.testimonial-section .swiper-container', {
         autoplay: true,
@@ -160,6 +180,22 @@ $(function () {
                     prevEl: '.swiper-button-prev',
                 },
             },
+        }
+    })
+
+    // faq
+
+    $(".faqBox .pore").click(function () {
+        console.log(123)
+        var flag = $(this).next().is(':hidden');
+        console.log(flag, "flag");
+        if (flag) {
+            $(this).next().slideDown(600);
+            $(this).next().css({
+                "border-top": "1px solid rgba(0, 0, 0, 0.1)"
+            })
+        } else {
+            $(this).next().slideUp(600);
         }
     })
 })

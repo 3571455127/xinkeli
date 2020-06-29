@@ -131,105 +131,212 @@
             </div>
         </div>
     </div>
+<div class="faq">
+    <div class="container">
+        <div class="row">
+            <div class="clearfix">
+                <div class="col-lg-8 col-md-8 col-sm-8">
+                    <h5>FAQ</h5>
+                    <div class="faqBox clearfix">
+                        <ul>
+                            <li>
+                                <div class="clearfix pore">
+                                    <div class="num col-gl-1 col-md-1 col-sm-1 col-xs-1">
+                                        1
+                                    </div>
+                                    <div class="col-gl-11 col-md-11 col-sm-11 col-xs-11">
+                                        How to find a Packing machine suitable for my product?
+                                    </div>
+                                </div>
+                                <div class="submenu clearfix">
+                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+                                    <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 txt">
+                                        <p> Tell us about your product details and packing requirements.
+                                        </p>
+                                        <p> 1. What kind of product you would like to pack?</p>
+                                        <p> 2. The bag/sachet/pouch size of you need for the product packing ( the
+                                            length,
+                                            width).</p>
+                                        <p> 3. The weight of each pack you need.</p>
+                                        <p>4. You requirement for the machines and the bag style.</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="clearfix pore">
+                                    <div class="num col-gl-1 col-md-1 col-sm-1 col-xs-1">
+                                        2
+                                    </div>
+                                    <div class="col-gl-11 col-md-11 col-sm-11 col-xs-11">
+                                        Is engineer available to serve oversea?
+                                    </div>
+                                </div>
+                                <div class="submenu clearfix">
+                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+                                    <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 txt">
+                                        <p>Yes, but the travel fee is responsible by you.
+                                            In order to save your cost, we will send you a video of full details machine
+                                            installation and assist you till the end.
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="clearfix pore">
+                                    <div class="num col-gl-1 col-md-1 col-sm-1 col-xs-1">
+                                        3
+                                    </div>
+                                    <div class="col-gl-11 col-md-11 col-sm-11 col-xs-11">
+                                        How can we make sure about the machine quality after placing the order?
+                                    </div>
+                                </div>
+                                <div class="submenu clearfix">
+                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+                                    <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 txt">
+                                        <p>Before delivery, we will send you the pictures and videos for you to check
+                                            the
+                                            machine quality. </p>
+                                        <p> And also you can arrange for quality checking by yourself or by your
+                                            contacts in
+                                            China.</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="clearfix pore">
+                                    <div class="num col-gl-1 col-md-1 col-sm-1 col-xs-1">
+                                        4
+                                    </div>
+                                    <div class="col-gl-11 col-md-11 col-sm-11 col-xs-11">
+                                        We are afraid you won't send us the machine after we send you the money?
+                                    </div>
+                                </div>
+                                <div class="submenu clearfix">
+                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+                                    <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 txt">
+                                        <p>We have our business license and certificate. And it is available for us to
+                                            use
+                                            alibaba trade assurance service guarantee your money, and guarantee your
+                                            machine's on-time delivery and machine quality.</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="clearfix pore">
+                                    <div class="num col-gl-1 col-md-1 col-sm-1 col-xs-1">
+                                        5
+                                    </div>
+                                    <div class="col-gl-11 col-md-11 col-sm-11 col-xs-11">
+                                        Can you explain me the whole transaction process ?
+                                    </div>
+                                </div>
+                                <div class="submenu clearfix">
+                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+                                    <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 txt">
+                                        <p> 1.Sign the Contact.</p>
+                                        <p> 2.Arrange 30% deposit to our factory.</p>
+                                        <p> 3.Factory arrange production.</p>
+                                        <p> 4.Test & detect the machine before shipping</p>
+                                        <p> 5.Inspected by customer or third agency through online or site test.</p>
+                                        <p> 6.Arrange the balance payment before shipment.</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="clearfix pore">
+                                    <div class="num col-gl-1 col-md-1 col-sm-1 col-xs-1">
+                                        6
+                                    </div>
+                                    <div class="col-gl-11 col-md-11 col-sm-11 col-xs-11">
+                                        Will you provide the delivery service?
+                                    </div>
+                                </div>
+                                <div class="submenu clearfix">
+                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+                                    <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 txt">
+                                        <p> Yes. Please inform us of your final destination, we will check with our
+                                            shipping
+                                            agent to quote the shipping cost for your reference before delivery.</p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
 
-    <div class="video">
-        <div class="container">
-            <div class="row">
-                <div class="list clearfix">
-                     <?php if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$r): $mod = ($i % 2 );++$i;?><!-- start -->
-                    <div class="col-lg-3 col-md-3 col-sm-3">
-                        <div class="box">
-                            <a data-fancybox="gallery" href="<?php echo ($r["videourl"]); ?>">
-                                <div class="box-img"><img  src="<?php echo ($r["thumb"]); ?>" alt="<?php echo ($r["title"]); ?>"></div>
-                                <p><?php echo (str_cut($r["title"],25,'...')); ?></p>
-                            </a>
-                        </div>
+
                     </div>
-                    <!-- end --><?php endforeach; endif; else: echo "" ;endif; ?>
-
                 </div>
-                <!--分页按钮-->
-                 <div class="row" style="margin: 3% 0 5% 0">
-                            <div class="col-xs-12 text-center pagingClick">
-                                <?php echo ($pages); ?>
+                <div class="col-lg-4 col-md-4 col-sm-4">
+                    <h5>Contact Details</h5>
+                    <div class="infos">
+                        <div class="clearfix">
+                            <div class="col-lg-2  col-md-2 col-sm-2 col-xs-2"><i class="fa fa-phone fa-lg"></i></div>
+                            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+                                <p>0086-757-82529123</p>
+                                <p>0086-757-82529129</p>
                             </div>
-                        </div> 
-                <hr>
-                <!-- 推荐列表 -->
-                <div class="recommend">
-                    <h5> Recommend Products</h5>
-                    <div class="box">
-                        <div class="swiper-container">
-                            <div class="swiper-wrapper">
-<?php  $_result=M("product")->field("title,thumb,url,description")->where(" 1  and lang=1 AND status=1   AND posid =1")->order("listorder asc")->limit("5")->select();; if ($_result): $i=0;foreach($_result as $key=>$r):++$i;$mod = ($i % 2 );?><div class="swiper-slide">
-        <a href="<?php echo ($r["url"]); ?>" title="<?php echo ($r["title"]); ?>">
-            <div class="box-img"><img src="<?php echo ($r["thumb"]); ?>" alt="<?php echo ($r["title"]); ?>"></div>
-            <h6><?php echo (str_cut($r["title"],25,'...')); ?></h6>
-            <p><?php echo (str_cut($r["description"],25,'...')); ?></p>
-        </a>
-        <div class="recommend-btn clearfix">
-            <div type="button" class="btn1" data-toggle="modal" data-target="#myModal">
-                Quick Inquiry
+                        </div>
+                        <div class="clearfix">
+                            <div class="col-lg-2  col-md-2 col-sm-2 col-xs-2">
+                                <i class="fa fa-envelope fa-lg"></i>
+                            </div>
+                            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+                                <p>juan@azhceramics.com</p>
+                                <p>0086-757-82529129</p>
+                            </div>
+                        </div>
+                        <div class="clearfix">
+                            <div class="col-lg-2  col-md-2 col-sm-2 col-xs-2">
+                                <i class="fa fa-skype fa-lg"></i>
+                            </div>
+                            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+                                <p>skype</p>
+                                <p>juan@azhceramics.com</p>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
             </div>
-            <a href="<?php echo ($r["url"]); ?>" title="<?php echo ($r["title"]); ?>" target="_blank" class="btn2"> View Details</a>
-        </div>
-    </div><?php endforeach; endif;?>   
-                                
-                                
-                            </div>
-                            <div class="swiper-pagination"></div>
-                            <div class="swiper-button-prev"></div>
-                            <div class="swiper-button-next"></div>
+            
+            <!-- 推荐列表 -->
+            <div class="recommend">
+                <h5> Recommend Products</h5>
+                <div class="box">
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <?php  $_result=M("product")->field("title,thumb,url,description,createtime")->where(" 1  and lang=1 AND status=1   AND posid =1")->order("listorder asc")->limit("5")->select();; if ($_result): $i=0;foreach($_result as $key=>$r):++$i;$mod = ($i % 2 );?><!-- start -->
+                                <div class="swiper-slide">
+                                    <a href="<?php echo ($r["url"]); ?>" title="<?php echo ($r["title"]); ?>">
+                                        <div class="box-img"><img src="<?php echo ($r["thumb"]); ?>" alt="<?php echo ($r["title"]); ?>"></div>
+                                    </a>
+                                    <h6><?php echo (str_cut($r["title"],25,'...')); ?></h6>
+                                    <div class="mate">
+                                        <span><i class="fa fa-bookmark"></i> <a href="<?php echo ($r["url"]); ?>"
+                                                title="<?php echo ($r["title"]); ?>">News</a></span>
+                                        <!--<span><i class="fa fa-user"></i> <a href="<?php echo ($r["url"]); ?>" title="<?php echo ($r["title"]); ?>">Digood</a></span>-->
+                                        <span><i class="fa fa-clock-o"></i> <a href="<?php echo ($r["url"]); ?>"
+                                                title="<?php echo ($r["title"]); ?>"><?php echo (todate($r["createtime"],'d')); ?>
+                                                <?php echo (todate($r["createtime"],'M')); ?> <?php echo (todate($r["createtime"],'Y')); ?></a></span>
+                                    </div>
+                                    <hr>
+                                    <a href="<?php echo ($r["url"]); ?>" title="<?php echo ($r["title"]); ?>">
+                                        <p><?php echo (str_cut($r["description"],125,'...')); ?></p>
+                                    </a>
+                                </div>
+                                <!-- end --><?php endforeach; endif;?>
                         </div>
+                        <div class="swiper-pagination"></div>
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>
                     </div>
-
-                    <!-- 弹窗表单 -->
-                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                                            aria-hidden="true">&times;</span></button>
-                                    <h4 class="modal-title" id="myModalLabel">Quick Inquiry</h4>
-                                </div>
-                                <div class="modal-body">
-                                    <form class="clearfix" method="post" action="index.php?g=Home&amp;a=message"
-                                        onsubmit="return beforeSubmit2(this);">
-                                        <div class="modal-box">
-                                            <p>Name: </p>
-                                            <input placeholder="Name" type="text" name="name">
-                                        </div>
-                                        <div class="modal-box">
-                                            <p>E-mail: </p>
-                                            <input placeholder="Email" type="text" name="email">
-                                        </div>
-                                        <div class="modal-box">
-                                            <p>Phone Number:</p>
-                                            <input placeholder="Phone" type="text" name="phone">
-                                        </div>
-                                        <div class="modal-box">
-                                            <p>Consulting Information:</p>
-                                            <textarea rows="3" placeholder="Please enter your consulting information."
-                                                name="message"></textarea>
-                                        </div>
-                                        <input type="submit" value="Send Inquiry" class="footer-sub">
-                                    </form>
-                                </div>
-                                <div class="modal-footer">
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
 
+
             </div>
-
         </div>
-
     </div>
-
+</div>
 
     <!-- 底部 -->
     <footer>

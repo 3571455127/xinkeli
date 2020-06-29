@@ -25,12 +25,9 @@
     <link rel="stylesheet" href="__PUBLIC__/www/css/jquery.fancybox.min.css">
     <link rel="stylesheet" href="__PUBLIC__/www/css/flaticon.css">
     <link rel="stylesheet" href="__PUBLIC__/www/css/camera.css">
+    <link rel='stylesheet' href='__PUBLIC__/www/css/animate.css'>
     <link rel="stylesheet" href="__PUBLIC__/www/css/main.css">
-     <script type="text/javascript" src="__PUBLIC__/www/js/jquery-3.3.1.min.js"></script> 
-    <!--<script type="text/javascript" src="__PUBLIC__/www/js/jquery.min.js"></script>-->
-<!--    <script type='text/javascript' src='__PUBLIC__/www/js/jquery.mobile.customized.min.js'></script>
-    <script type='text/javascript' src='__PUBLIC__/www/js/jquery.easing.1.3.js'></script>
-    <script type='text/javascript' src='__PUBLIC__/www/js/camera.min.js'></script>-->
+    <script type='text/javascript' src='__PUBLIC__/www/js/jquery.min.js'></script>
 </head>
 
 <body>
@@ -45,78 +42,82 @@
             </div>
         </div>
 
-        <div class="header-one">
-            <div class="top-header">
-                <div class="container clearfix">
-                    <div class="logo pull-left">
-                        <a href="/index.php"><img
-                                src="http://themes.digoodcms.com/logo/svg?main_color=061538&amp;sub_color=537590&amp;text_color=555"
-                                alt="" width="240"></a>
-                    </div>
-                    <div class="address-wrapper pull-right">
-                        <ul>
-                            <li class="address">
-                                <i class="icon fa fa-phone"></i>
-                                <h6>Phone:</h6>
-                                <p>10-00000-123</p>
-                            </li>
-                            <li class="address">
-                                <i class="icon fa fa-envelope"></i>
-                                <h6>Mail us:</h6>
-                                <p>supporthere@mail.com</p>
-                            </li>
-                            <li class="address">
-                                <i class="icon fa fa-skype"></i>
-                                <h6>Skype:</h6>
-                                <p>supporthere</p>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-        <div class="navs theme-menu-wrapper">
-            <div class="container">
-                <div class="row">
-                    <div class="navsbg clearfix">
-                        <div class="pull-left">
-                            <ul class="level">
-                                <li><a href="/index.php">hoem</a></li>
-                                <?php $n=0;foreach($Categorys as $key=>$r):if($n<6) :if( intval(0)==$r["parentid"] ) :++$n; if(!in_array($r[id],array(108,103))): ?><li>
-                                    <a href="<?php echo ($r["url"]); ?>" title="<?php echo ($r["catname"]); ?>"><?php echo ($r["catname"]); ?></a>
-                                    <?php if($r[child] == 1) : ?>
-                                    <i class="fa fa-angle-down" aria-hidden="true"></i>
-                                    <ul class="secondary">
-                                        <?php $n=0;foreach($Categorys as $key=>$rs):if($n<99) :if( intval($r[id])==$rs["parentid"] ) :++$n;?><li>
-                                            <a href="<?php echo ($rs["url"]); ?>" title="<?php echo ($rs["catname"]); ?>"><?php echo ($rs["catname"]); ?></a>
-                                            <?php if($rs[child] == 1) : ?>
-                                            <i class="fa fa-angle-down" aria-hidden="true"></i>
-                                            <ul class="third">
-                                                <?php $n=0;foreach($Categorys as $key=>$rss):if($n<99) :if( intval($rs[id])==$rss["parentid"] ) :++$n;?><li><a href="<?php echo ($rss["url"]); ?>"
-                                                                title="<?php echo ($rss["catname"]); ?>"><?php echo ($rss["catname"]); ?></a></li><?php endif; endif; endforeach;?>
-                                            </ul>
-                                            <?php endif;?>
-                                        </li><?php endif; endif; endforeach;?>
-                                    </ul>
-                                    <?php endif;?>
-                                </li><?php endif; endif; endif; endforeach;?>
+        <div style="background-color: #fff;">
+            <div class="header-one">
+                <div class="top-header">
+                    <div class="container clearfix">
+                        <div class="logo pull-left">
+                            <a href="/index.php"><img
+                                    src="http://themes.digoodcms.com/logo/svg?main_color=061538&amp;sub_color=537590&amp;text_color=555"
+                                    alt="" width="240"></a>
+                        </div>
+                        <div class="address-wrapper pull-right">
+                            <ul>
+                                <li class="address">
+                                    <i class="icon fa fa-phone"></i>
+                                    <h6>Phone:</h6>
+                                    <p>10-00000-123</p>
+                                </li>
+                                <li class="address">
+                                    <i class="icon fa fa-envelope"></i>
+                                    <h6>Mail us:</h6>
+                                    <p>supporthere@mail.com</p>
+                                </li>
+                                <li class="address">
+                                    <i class="icon fa fa-skype"></i>
+                                    <h6>Skype:</h6>
+                                    <p>supporthere</p>
+                                </li>
                             </ul>
-
                         </div>
-                        <div class="pull-right">
-                            <button type="button" class="dropdown-toggle" data-toggle="dropdown"
-                                aria-expanded="false"><i class="fa fa-search" aria-hidden="true"></i></button>
-                            <form action="#" class="dropdown-menu">
-                                <input type="text" placeholder="Enter Your Search">
-                                <button><i class="fa fa-search"></i></button>
-                            </form>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="navs theme-menu-wrapper">
+                <div class="container">
+                    <div class="row">
+                        <div class="navsbg clearfix">
+                            <div class="pull-left">
+                                <ul class="level">
+                                    <li><a href="/index.php">hoem</a></li>
+                                    <?php $n=0;foreach($Categorys as $key=>$r):if($n<6) :if( intval(0)==$r["parentid"] ) :++$n; if(!in_array($r[id],array(108,103))): ?><li>
+                                                <a href="<?php echo ($r["url"]); ?>" title="<?php echo ($r["catname"]); ?>"><?php echo ($r["catname"]); ?></a>
+                                                <?php if($r[child] == 1) : ?>
+                                                <i class="fa fa-angle-down" aria-hidden="true"></i>
+                                                <ul class="secondary">
+                                                    <?php $n=0;foreach($Categorys as $key=>$rs):if($n<99) :if( intval($r[id])==$rs["parentid"] ) :++$n;?><li>
+                                                            <a href="<?php echo ($rs["url"]); ?>" title="<?php echo ($rs["catname"]); ?>"><?php echo ($rs["catname"]); ?></a>
+                                                            <?php if($rs[child] == 1) : ?>
+                                                            <i class="fa fa-angle-down" aria-hidden="true"></i>
+                                                            <ul class="third">
+                                                                <?php $n=0;foreach($Categorys as $key=>$rss):if($n<99) :if( intval($rs[id])==$rss["parentid"] ) :++$n;?><li><a href="<?php echo ($rss["url"]); ?>"
+                                                                            title="<?php echo ($rss["catname"]); ?>"><?php echo ($rss["catname"]); ?></a>
+                                                                    </li><?php endif; endif; endforeach;?>
+                                                            </ul>
+                                                            <?php endif;?>
+                                                        </li><?php endif; endif; endforeach;?>
+                                                </ul>
+                                                <?php endif;?>
+                                            </li><?php endif; endif; endif; endforeach;?>
+                                </ul>
+
+                            </div>
+                            <div class="pull-right">
+                                <button type="button" class="dropdown-toggle" data-toggle="dropdown"
+                                    aria-expanded="false"><i class="fa fa-search" aria-hidden="true"></i></button>
+                                <form action="#" class="dropdown-menu">
+                                    <input type="text" placeholder="Enter Your Search">
+                                    <button><i class="fa fa-search"></i></button>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
 
     </header>
 
@@ -321,8 +322,9 @@
     </footer>
 </body>
 <!-- js -->
-
-     <!--<script type="text/javascript" src="__PUBLIC__/www/js/jquery-3.3.1.min.js"></script>--> 
+<script type='text/javascript' src='__PUBLIC__/www/js/jquery.mobile.customized.min.js'></script>
+<script type='text/javascript' src='__PUBLIC__/www/js/jquery.easing.1.3.js'></script>
+<script type='text/javascript' src='__PUBLIC__/www/js/camera.min.js'></script>
 <script type="text/javascript" src="__PUBLIC__/www/js/jquery.waypoints.min.js"></script>
 <script type="text/javascript" src="__PUBLIC__/www/js/jquery.countup.min.js"></script>
 <script type="text/javascript" src="__PUBLIC__/www/js/bootstrap.min.js"></script>
