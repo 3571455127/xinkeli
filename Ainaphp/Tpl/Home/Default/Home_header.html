@@ -27,6 +27,7 @@
     <link rel="stylesheet" href="__PUBLIC__/www/css/camera.css">
     <link rel="stylesheet" href="__PUBLIC__/www/css/main.css">
     <script type='text/javascript' src='__PUBLIC__/www/js/jquery.min.js'></script>
+    <script type="text/javascript" src="__PUBLIC__/www/js/swiper.min.js"></script>
 </head>
 
 <body>
@@ -41,7 +42,7 @@
             </div>
         </div>
 
-        <div style="background-color: #fff;">
+        <div class="pc-nav" style="background-color: #fff;">
             <div class="header-one">
                 <div class="top-header">
                     <div class="container clearfix">
@@ -78,9 +79,9 @@
                         <div class="navsbg clearfix">
                             <div class="pull-left">
                                 <ul class="level">
-                                    <li><a href="/index.php">hoem</a></li>
-                                    <YP:subcat catid="0" id="r" where="listorder asc" limit="6" key="n">
-                                        <if condition="!in_array($r[id],array(108,103))">
+                                    <li><a href="/index.php">home</a></li>
+                                    <YP:subcat catid="0" id="r" where="listorder asc" limit="100" key="n">
+                                        <if condition="!in_array($r[id],array(108,103,111,112,113))">
                                             <li>
                                                 <a href="{$r.url}" title="{$r.catname}">{$r.catname}</a>
                                                 {if $r[child] == 1}
@@ -119,6 +120,63 @@
                                 </form>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="wap-nav">
+           
+            <div class="bgs">
+                <div class="bg_l">
+                </div>
+                <div class="nav_right">
+                    <div class="nav_rin">
+
+                        <ul class="menu_ul clearfix">
+                            <li class="{if MODULE_NAME == 'Index'}active{/if}"><a href="/index.php?l={$Think.LANG_SET}"
+                                    title="">HOME</a></li>
+                            <YP:subcat catid="0" id="r" where="listorder asc" limit="100" key="n">
+                                <if condition="!in_array($r[id],array(108,103,111,112,113))">
+                                    <li class="active menu_li">
+                                        <a href="{$r.url}" title="{$r.catname}">{$r.catname}</a>
+                                        {if $r[child] == 1}
+                                        <span class="arrow"><i></i></span>
+                                        <ul class="mt_ul">
+                                            <YP:subcat catid="$r[id]" where="listorder asc" id="rs">
+                                                <li class="menu_li arrow2">
+                                                    <a href="{$rs.url}" title="{$rs.catname}">{$rs.catname}
+                                                    </a>
+                                                    {if $rs[child] == 1}
+                                                    <span class="arrow"><i></i></span>
+                                                    <ul class="mt_ul last-padd">
+                                                        <YP:subcat catid="$rs[id]" where="listorder asc" id="rss">
+                                                            <li><a href="{$rss.url}"
+                                                                    title="{$rss.catname}">{$rss.catname}</a>
+                                                            </li>
+                                                        </YP:subcat>
+                                                    </ul>
+                                                    {/if}
+                                                </li>
+                                            </YP:subcat>
+                                        </ul>
+                                        {/if}
+                                    </li>
+                                </if>
+                            </YP:subcat>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="header">
+                <div class="h_in">
+                    <div class="h_left">
+                        <a href="" class="h_logo"><img src="__PUBLIC__/www/images/logo.png"></a>
+                    </div>
+                    <div class="h_right">
+                        <i class="fa fa-list-ul" aria-hidden="true"></i>
                     </div>
                 </div>
             </div>

@@ -132,104 +132,83 @@
             </div>
         </div>
     </div>
-
-    <!-- about -->
-    <div class="about">
-        <div class="container">
+    <div class="news">
+        <div class="news-box container">
             <div class="row">
-                <!-- who -->
-                <?php echo ($cont); ?>
+                <div class="clearfix">
+                    <div class="left col-lg-9 col-md-9 col-sm-12">
+                        <ul>
+<?php if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$r): $mod = ($i % 2 );++$i;?><!-- start -->
+                            <li><a  href="<?php echo ($r["url"]); ?>" title="<?php echo ($r["title"]); ?>">
+                                    <img src="<?php echo ($r["thumb"]); ?>" alt="<?php echo ($r["title"]); ?>">
+                                    <h6><?php echo (str_cut($r["title"],40,'...')); ?></h6>
+                                    <p><?php echo (str_cut($r["description"],180,'...')); ?></p>
+                                    <div class="time clearfix">
+                                        <span><?php echo (todate($r["createtime"],'d')); ?> <?php echo (todate($r["createtime"],'M')); ?> <?php echo (todate($r["createtime"],'Y')); ?></span>
+                                        <span>READ MORE</span>
+                                    </div>
+                                </a></li>
+                            <!-- end --><?php endforeach; endif; else: echo "" ;endif; ?>
 
-                <!-- team -->
-                <div class="about-team about-why">
-                    <div class="top">
-                        <h3>OUR TEAM</h3>
-                        <div class="title">Capitalise on low hanging fruit to identify a ballpark value added activity
-                            to beta test. Override the digital divide with additional clickthroughs from DevOps.</div>
-                        <div class="hr-divider hr-divider-style-1"></div>
+                        </ul>
+                        <!--分页按钮-->
+                         <div class="row" style="margin: 3% 0 5% 0">
+                            <div class="col-xs-12 text-center pagingClick">
+                                <?php echo ($pages); ?>
+                            </div>
+                        </div> 
+
                     </div>
-                    <div class="list clearfix">
-                        <?php  $_result=M("History")->field("*")->where(" 1  and lang=1 AND status=1  AND catid=112")->order("listorder desc")->limit("100")->select();; if ($_result): $i=0;foreach($_result as $key=>$r):++$i;$mod = ($i % 2 );?><!-- start -->
-                        <div class="col-lg-4 col-md-4 col-sm-6">
-                            <div class="box-img">  <img src="<?php echo ($r["thumb"]); ?>" alt="<?php echo ($r["title"]); ?>"> </div>
-                            <div class="name"><?php echo ($r["title"]); ?></div>
-                            <div class="position"><?php echo ($r["keyword"]); ?></div>
-                            <p><?php echo ($r["cont"]); ?></p>
-                            <div class="team-block-social-icons">
+                    <div class="nav-right col-lg-3 col-md-3 col-sm-12">
+                        <!-- 搜索 -->
+                            <form  action="<?php echo U('Search/index');?>" method="GET">
+                        <div class="aside-search">
+                            <div class="input-group">
+                                <input type="text" class="form-control" name="keyword" placeholder="Search for...">
+                                <input type="hidden" name="module" value="Product">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default btn-primary" type="submit">button</button>
+                                </span>
+                            </div>
+                        </div>
+                            </form>
 
-                                <div class="social-icons-block icons-style-1">
-                                    <ul>
-                                        <li>
-                                            <a href="#" title="Facebook">
-                                                <i class="fa fa-facebook" aria-hidden="true"></i>
-                                                <i class="fa fa-facebook" aria-hidden="true"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#" title="Google Plus">
-                                                <i class="fa fa-google-plus" aria-hidden="true"></i>
-                                                <i class="fa fa-google-plus" aria-hidden="true"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#" title="Twitter">
-                                                <i class="fa fa-twitter" aria-hidden="true"></i>
-                                                <i class="fa fa-twitter" aria-hidden="true"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#" title="Pinterest">
-                                                <i class="fa fa-pinterest" aria-hidden="true"></i>
-                                                <i class="fa fa-pinterest" aria-hidden="true"></i>
-                                            </a>
-                                        </li>
+                        <div class="sidebar-nav" id="icos">
+                            <ul class="first-nav">
+                                <li><a href="/index.php">Home</a></li>
+                                <?php $n=0;foreach($Categorys as $key=>$r):if($n<100) :if( intval(73)==$r["parentid"] ) :++$n;?><li>
+<a href="<?php if($r[child] == 1) : ?>javascript:;<?php else : echo ($r["url"]); endif;?>" title="<?php echo ($r["catname"]); ?>"><?php echo ($r["catname"]); ?> <?php if($r[child] == 1) : ?><i class="fa fa-angle-right"></i><?php endif;?></a>
+<?php if($r[child] == 1) : ?>
+                                    <ul class="second-nav">
+                                        <?php $n=0;foreach($Categorys as $key=>$rs):if($n<99) :if( intval($r[id])==$rs["parentid"] ) :++$n;?><li>
+<a href="<?php if($rs[child] == 1) : ?>javascript:;<?php else : echo ($rs["url"]); endif;?>" title="<?php echo ($rs["catname"]); ?>"><?php echo ($rs["catname"]); ?> <?php if($rs[child] == 1) : ?><i class="fa fa-angle-right"></i><?php endif;?></a>
+<?php if($rs[child] == 1) : ?>
+                                            <ul class="three_nav">
+                                                <?php $n=0;foreach($Categorys as $key=>$rss):if($n<99) :if( intval($rs[id])==$rss["parentid"] ) :++$n;?><li><a href="<?php echo ($rss["url"]); ?>" title="<?php echo ($rss["catname"]); ?>"><?php echo ($rss["catname"]); ?></a></li><?php endif; endif; endforeach;?>
+                                            </ul>
+<?php endif;?>
+                                        </li><?php endif; endif; endforeach;?>
                                     </ul>
-                                </div>
-                            </div>
+<?php endif;?>
+                                </li><?php endif; endif; endforeach;?>
+                            </ul>
                         </div>
-                        <!-- end --><?php endforeach; endif;?>
-                        
+                        <ul class="digood-related">
+<?php  $_result=M("product")->field("title,thumb,url")->where(" 1  and lang=1 AND status=1   AND posid =1")->order("listorder asc")->limit("5")->select();; if ($_result): $i=0;foreach($_result as $key=>$r):++$i;$mod = ($i % 2 );?><li><a href="<?php echo ($r["url"]); ?>" title="<?php echo ($r["title"]); ?>" class="clearfix">
+                                    <img class="col-lg-4 col-md-4 col-sm-4 col-xs-4" src="<?php echo ($r["thumb"]); ?>" alt="<?php echo ($r["title"]); ?>">
+                                    <h6 class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><?php echo (str_cut($r["title"],25,'...')); ?></h6>
+                                </a>
+                            </li><?php endforeach; endif;?>
+
+                        </ul>
                     </div>
-
-                </div>
-
-                <div class="about-swiper">
-                    <div class="swiper-container">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <p>Donec pulvinar quam dolor, vitae semper ligula pretium. Vitae turpis vel nisi
-                                    vehicula pharetra. Nunc ullamcorper commodo facilisis. Donec dapibus sapien finibus
-                                    elit semper.</p>
-                                <h5 class="name">Arthur</h5>
-                                <p>CEO - <a href="">Graphicfort</a></p>
-                            </div>
-                            <div class="swiper-slide">
-                                <p>Maecenas fringilla mattis quam vitae blandit. Duis fermentum, purus vitae semper
-                                    sollicitudin, lorem risus pretium nisl, arcu sed odio. Ut mattis rutrum enim, vel
-                                    cursus turpis ullamcorper nec semper.</p>
-                                <h5 class="name">Abelle</h5>
-                                <p>Marketing - <a href="">Graphicfort</a></p>
-                            </div>
-                            <div class="swiper-slide">
-                                <p>Phasellus egestas viverra felis in vulputate. Pellentesque habitant morbi tristique
-                                    senectus et netus et malesuada fames ac turpis egestas. Fusce ut turpis nec justo
-                                    rhoncus pellentesque.</p>
-                                <h5 class="name">Corin</h5>
-                                <p>Art Director - <a href="">Graphicfort</a></p>
-                            </div>
-                        </div>
-                        <div class="swiper-pagination"></div>
-                    </div>
-
-                    <div class="swiper-button-prev"></div>
-                    <div class="swiper-button-next"></div>
                 </div>
 
             </div>
-
         </div>
-
     </div>
+
+
 
 
     <!-- 底部 -->

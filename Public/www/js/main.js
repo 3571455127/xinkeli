@@ -18,6 +18,15 @@ $(function () {
             loaderPadding: 10,
         });
     };
+    var mySwiper = new Swiper('.wap-banner .swiper-container', {
+        autoplay: true,
+        loop: true,
+        speed: 1200,
+        pagination: {
+            el: '.wap-banner .swiper-pagination',
+            clickable: true,
+        }
+    })
 
     // index testimonial-section
     var mySwiper = new Swiper('.testimonial-section .swiper-container', {
@@ -163,18 +172,16 @@ $(function () {
     // product-show
     var gallerySwiper = new Swiper('.gallery-top', {
         spaceBetween: 10,
-        loop: true,
         navigation: {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
         },
         thumbs: {
             swiper: {
-                loop: true,
                 el: '.gallery-thumbs',
                 spaceBetween: 10,
                 slidesPerView: 4,
-                watchSlidesVisibility: true,/*避免出现bug*/
+                watchSlidesVisibility: true,
                 navigation: {
                     nextEl: '.swiper-button-next',
                     prevEl: '.swiper-button-prev',
@@ -197,6 +204,22 @@ $(function () {
         } else {
             $(this).next().slideUp(600);
         }
+    })
+
+    // wap菜单切换
+    $('.arrow').click(function () {
+        $(this).toggleClass('active3');
+        $(this).siblings('.mt_ul').slideToggle(300);
+    })
+    $(".h_right").click(function () {
+        $(".bgs").animate({
+            "right": "0"
+        }, 200);
+    })
+    $('.bg_l').click(function () {
+        $(".bgs").animate({
+            "right": "-100%"
+        }, 200);
     })
 })
 

@@ -27,6 +27,7 @@
     <link rel="stylesheet" href="__PUBLIC__/www/css/camera.css">
     <link rel="stylesheet" href="__PUBLIC__/www/css/main.css">
     <script type='text/javascript' src='__PUBLIC__/www/js/jquery.min.js'></script>
+    <script type="text/javascript" src="__PUBLIC__/www/js/swiper.min.js"></script>
 </head>
 
 <body>
@@ -41,7 +42,7 @@
             </div>
         </div>
 
-        <div style="background-color: #fff;">
+        <div class="pc-nav" style="background-color: #fff;">
             <div class="header-one">
                 <div class="top-header">
                     <div class="container clearfix">
@@ -78,8 +79,8 @@
                         <div class="navsbg clearfix">
                             <div class="pull-left">
                                 <ul class="level">
-                                    <li><a href="/index.php">hoem</a></li>
-                                    <?php $n=0;foreach($Categorys as $key=>$r):if($n<6) :if( intval(0)==$r["parentid"] ) :++$n; if(!in_array($r[id],array(108,103))): ?><li>
+                                    <li><a href="/index.php">home</a></li>
+                                    <?php $n=0;foreach($Categorys as $key=>$r):if($n<100) :if( intval(0)==$r["parentid"] ) :++$n; if(!in_array($r[id],array(108,103,111,112,113))): ?><li>
                                                 <a href="<?php echo ($r["url"]); ?>" title="<?php echo ($r["catname"]); ?>"><?php echo ($r["catname"]); ?></a>
                                                 <?php if($r[child] == 1) : ?>
                                                 <i class="fa fa-angle-down" aria-hidden="true"></i>
@@ -115,10 +116,60 @@
             </div>
         </div>
 
+        <div class="wap-nav">
+            <!-- nav -->
+            <div class="bgs">
+                <div class="bg_l">
+                </div>
+                <div class="nav_right">
+                    <div class="nav_rin">
+
+                        <ul class="menu_ul clearfix">
+                            <li class="<?php if(MODULE_NAME == 'Index') : ?>active<?php endif;?>"><a href="/index.php?l=<?php echo (LANG_SET); ?>"
+                                    title="">HOME</a></li>
+                            <?php $n=0;foreach($Categorys as $key=>$r):if($n<100) :if( intval(0)==$r["parentid"] ) :++$n; if(!in_array($r[id],array(108,103,111,112,113))): ?><li class="active menu_li">
+                                        <a href="<?php echo ($r["url"]); ?>" title="<?php echo ($r["catname"]); ?>"><?php echo ($r["catname"]); ?></a>
+                                        <?php if($r[child] == 1) : ?>
+                                        <span class="arrow"><i></i></span>
+                                        <ul class="mt_ul">
+                                            <?php $n=0;foreach($Categorys as $key=>$rs):if($n<99) :if( intval($r[id])==$rs["parentid"] ) :++$n;?><li class="menu_li arrow2">
+                                                    <a href="<?php echo ($rs["url"]); ?>" title="<?php echo ($rs["catname"]); ?>"><?php echo ($rs["catname"]); ?>
+                                                    </a>
+                                                    <?php if($rs[child] == 1) : ?>
+                                                    <span class="arrow"><i></i></span>
+                                                    <ul class="mt_ul last-padd">
+                                                        <?php $n=0;foreach($Categorys as $key=>$rss):if($n<99) :if( intval($rs[id])==$rss["parentid"] ) :++$n;?><li><a href="<?php echo ($rss["url"]); ?>"
+                                                                    title="<?php echo ($rss["catname"]); ?>"><?php echo ($rss["catname"]); ?></a>
+                                                            </li><?php endif; endif; endforeach;?>
+                                                    </ul>
+                                                    <?php endif;?>
+                                                </li><?php endif; endif; endforeach;?>
+                                        </ul>
+                                        <?php endif;?>
+                                    </li><?php endif; endif; endif; endforeach;?>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="header">
+                <div class="h_in">
+                    <div class="h_left">
+                        <a href="" class="h_logo"><img src="__PUBLIC__/www/images/logo.png"></a>
+                    </div>
+                    <div class="h_right">
+                        <i class="fa fa-list-ul" aria-hidden="true"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
 
     </header>
 <div class="banner clearfix">
-    
+
+    <!-- pc -->
     <div class="camera_wrap" id="camera_demo">
         <div data-src="/Public/www/images/slide-1.jpg">
             <div class="camera_caption">
@@ -161,10 +212,29 @@
         </div>
 
     </div>
-    
+
+    <!-- wap -->
+    <div class="wap-banner">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+
+                <div class="swiper-slide">
+                    <img src="/Public/www/images/slide-1.jpg" alt="">
+                </div>
+
+                <div class="swiper-slide">
+                    <img src="/Public/www/images/slide-2.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="/Public/www/images/slide-3.jpg" alt="">
+                </div>
+
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
 </div>
 
-</div>
 
 <div class="index">
     <!-- section-spacing -->
@@ -432,8 +502,14 @@
                                     <input placeholder="Email *" type="text" name="email">
                                 </div>
                             </div>
-                            <div class="col-lg-12">
-                                <textarea class="" rows="3" name="message" placeholder="Message ..."></textarea>
+                            <div class="clearfix">
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <input placeholder="Phone *" type="text" name="phone">
+                                </div>
+                                <div class="col-lg-6  col-md-6 col-sm-6">
+                                    <textarea class="" name="message" placeholder="Message ..."></textarea>
+                                </div>
+
                             </div>
                             <button type="submit" class="btns">GET A QUOTES</button>
 
@@ -502,102 +578,101 @@
         </div>
     </div>
 </div>
+<!-- 底部 -->
+<footer>
+    <!-- top -->
+    <button class="scroll-top tran3s">
+        <i class="fa fa-angle-up" aria-hidden="true"></i>
+    </button>
 
-    <!-- 底部 -->
-    <footer>
-        <!-- top -->
-        <button class="scroll-top tran3s">
-            <i class="fa fa-angle-up" aria-hidden="true"></i>
-        </button>
+    <div class="content">
+        <div class="container">
+            <div class="row">
+                <div class="widget col-lg-4 col-md-4 col-sm-6">
+                    <div class="footer-logo"><a href="" title=""><img
+                                src="http://themes.digoodcms.com/logo/svg?main_color=fff&sub_color=fff&text_color=fff"
+                                alt=""></a></div>
+                    <p>That started from this tropic port aboard this tiny ship today still want by theam government
+                        they survive on up to thetre east side to a deluxe as soldiers of artics fortune.</p>
+                    <div class="queries"><span class="glyphicon glyphicon-phone-alt" aria-hidden="true"></span> Any
+                        Queries : <a href="#" class="one-pan-link-mark">(+1) 234 567 900</a></div>
+                </div>
 
-        <div class="content">
-            <div class="container">
-                <div class="row">
-                    <div class="widget col-lg-4 col-md-4 col-sm-6">
-                        <div class="footer-logo"><a href="" title=""><img
-                                    src="http://themes.digoodcms.com/logo/svg?main_color=fff&sub_color=fff&text_color=fff"
-                                    alt=""></a></div>
-                        <p>That started from this tropic port aboard this tiny ship today still want by theam government
-                            they survive on up to thetre east side to a deluxe as soldiers of artics fortune.</p>
-                        <div class="queries"><span class="glyphicon glyphicon-phone-alt" aria-hidden="true"></span> Any
-                            Queries : <a href="#" class="one-pan-link-mark">(+1) 234 567 900</a></div>
-                    </div>
+                <div class="recent col-lg-3 col-md-3 col-sm-6">
+                    <h6 class="title">RECENT POSTS</h6>
+                    <ul>
 
-                    <div class="recent col-lg-3 col-md-3 col-sm-6">
-                        <h6 class="title">RECENT POSTS</h6>
-                        <ul>
-
-                            <!-- start -->
-                            <li class="clearfix">
-                                <img src="__PUBLIC__/www/images/footer1.jpg" alt="" class="pull-left">
-                                <div class="post pull-left">
-                                    <a href="#" class="one-pan-link-mark">Till wanted by theam govern they survive as
-                                        soldiers.</a>
-                                    <div class="date"><i class="fa fa-calendar-o" aria-hidden="true"></i> Feb 06, 2018
-                                    </div>
+                        <!-- start -->
+                        <li class="clearfix">
+                            <img src="__PUBLIC__/www/images/footer1.jpg" alt="" class="pull-left">
+                            <div class="post pull-left">
+                                <a href="#" class="one-pan-link-mark">Till wanted by theam govern they survive as
+                                    soldiers.</a>
+                                <div class="date"><i class="fa fa-calendar-o" aria-hidden="true"></i> Feb 06, 2018
                                 </div>
-                            </li>
-                            <!-- end -->
+                            </div>
+                        </li>
+                        <!-- end -->
 
-                            <li class="clearfix">
-                                <img src="__PUBLIC__/www/images/footer2.jpg" alt="" class="pull-left">
-                                <div class="post pull-left">
-                                    <a href="#" class="one-pan-link-mark">World don't move to beat of just one drum.</a>
-                                    <div class="date"><i class="fa fa-calendar-o" aria-hidden="true"></i> Mar 20, 2018
-                                    </div>
+                        <li class="clearfix">
+                            <img src="__PUBLIC__/www/images/footer2.jpg" alt="" class="pull-left">
+                            <div class="post pull-left">
+                                <a href="#" class="one-pan-link-mark">World don't move to beat of just one drum.</a>
+                                <div class="date"><i class="fa fa-calendar-o" aria-hidden="true"></i> Mar 20, 2018
                                 </div>
-                            </li>
-                        </ul>
-                    </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
 
-                    <div class="footer-list col-lg-5 col-md-5 col-sm-6">
-                        <h6 class="title">SOLUTIONS</h6>
-                        <div class="box clearfix">
-                            <div class="col-md-6">
-                                <ul>
-                                    <li><a href="#" class="one-pan-link-mark">Travel and Aviation</a></li>
-                                    <li><a href="#" class="one-pan-link-mark">Business Services</a></li>
-                                    <li><a href="#" class="one-pan-link-mark">Consumer Products</a></li>
-                                    <li><a href="#" class="one-pan-link-mark">Financial Services</a></li>
-                                    <li><a href="#" class="one-pan-link-mark">Software Research</a></li>
-                                    <li><a href="#" class="one-pan-link-mark">Quality Resourcing</a></li>
-                                </ul>
-                            </div>
-                            <div class="col-md-6">
-                                <ul>
-                                    <li><a href="#" class="one-pan-link-mark">Travel and Aviation</a></li>
-                                    <li><a href="#" class="one-pan-link-mark">Business Services</a></li>
-                                    <li><a href="#" class="one-pan-link-mark">Consumer Products</a></li>
-                                    <li><a href="#" class="one-pan-link-mark">Financial Services</a></li>
-                                    <li><a href="#" class="one-pan-link-mark">Software Research</a></li>
-                                    <li><a href="#" class="one-pan-link-mark">Quality Resourcing</a></li>
-                                </ul>
-                            </div>
+                <div class="footer-list col-lg-5 col-md-5 col-sm-6">
+                    <h6 class="title">SOLUTIONS</h6>
+                    <div class="box clearfix">
+                        <div class="col-md-6">
+                            <ul>
+                                <li><a href="#" class="one-pan-link-mark">Travel and Aviation</a></li>
+                                <li><a href="#" class="one-pan-link-mark">Business Services</a></li>
+                                <li><a href="#" class="one-pan-link-mark">Consumer Products</a></li>
+                                <li><a href="#" class="one-pan-link-mark">Financial Services</a></li>
+                                <li><a href="#" class="one-pan-link-mark">Software Research</a></li>
+                                <li><a href="#" class="one-pan-link-mark">Quality Resourcing</a></li>
+                            </ul>
                         </div>
-
+                        <div class="col-md-6">
+                            <ul>
+                                <li><a href="#" class="one-pan-link-mark">Travel and Aviation</a></li>
+                                <li><a href="#" class="one-pan-link-mark">Business Services</a></li>
+                                <li><a href="#" class="one-pan-link-mark">Consumer Products</a></li>
+                                <li><a href="#" class="one-pan-link-mark">Financial Services</a></li>
+                                <li><a href="#" class="one-pan-link-mark">Software Research</a></li>
+                                <li><a href="#" class="one-pan-link-mark">Quality Resourcing</a></li>
+                            </ul>
+                        </div>
                     </div>
+
                 </div>
             </div>
         </div>
+    </div>
 
-        <div class="info">
-            <div class="container">
-                <div class="row">
-                    <div class="left col-lg-6 col-md-6 col-sm-6">
-                        Copyright 2018 All Right Reserved.
-                    </div>
-                    <div class="right col-lg-6 col-md-6 col-sm-6">
-                        <ul>
-                            <li><a href="#" class="one-pan-link-mark">About</a></li>
-                            <li><a href="#" class="one-pan-link-mark">Solutions</a></li>
-                            <li><a href="#" class="one-pan-link-mark">FAQ’s</a></li>
-                            <li><a href="#" class="one-pan-link-mark">Contact</a></li>
-                        </ul>
-                    </div>
+    <div class="info">
+        <div class="container">
+            <div class="row">
+                <div class="left col-lg-6 col-md-6 col-sm-6">
+                    Copyright 2018 All Right Reserved.
+                </div>
+                <div class="right col-lg-6 col-md-6 col-sm-6">
+                    <ul>
+                        <li><a href="#" class="one-pan-link-mark">About</a></li>
+                        <li><a href="#" class="one-pan-link-mark">Solutions</a></li>
+                        <li><a href="#" class="one-pan-link-mark">FAQ’s</a></li>
+                        <li><a href="#" class="one-pan-link-mark">Contact</a></li>
+                    </ul>
                 </div>
             </div>
         </div>
-    </footer>
+    </div>
+</footer>
 </body>
 <!-- js -->
 <script type='text/javascript' src='__PUBLIC__/www/js/jquery.mobile.customized.min.js'></script>
@@ -606,7 +681,6 @@
 <script type="text/javascript" src="__PUBLIC__/www/js/jquery.waypoints.min.js"></script>
 <script type="text/javascript" src="__PUBLIC__/www/js/jquery.countup.min.js"></script>
 <script type="text/javascript" src="__PUBLIC__/www/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="__PUBLIC__/www/js/swiper.min.js"></script>
 <script type="text/javascript" src="__PUBLIC__/www/js/wow.min.js"></script>
 <script type="text/javascript" src="__PUBLIC__/www/js/jquery.fancybox.min.js"></script>
 <script type="text/javascript" src="__PUBLIC__/www/js/main.js"></script>

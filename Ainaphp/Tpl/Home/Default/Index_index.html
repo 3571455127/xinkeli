@@ -1,5 +1,6 @@
 <div class="banner clearfix">
-    
+
+    <!-- pc -->
     <div class="camera_wrap" id="camera_demo">
         <div data-src="/Public/www/images/slide-1.jpg">
             <div class="camera_caption">
@@ -42,10 +43,29 @@
         </div>
 
     </div>
-    
+
+    <!-- wap -->
+    <div class="wap-banner">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+
+                <div class="swiper-slide">
+                    <img src="/Public/www/images/slide-1.jpg" alt="">
+                </div>
+
+                <div class="swiper-slide">
+                    <img src="/Public/www/images/slide-2.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="/Public/www/images/slide-3.jpg" alt="">
+                </div>
+
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
 </div>
 
-</div>
 
 <div class="index">
     <!-- section-spacing -->
@@ -317,8 +337,14 @@
                                     <input placeholder="Email *" type="text" name="email">
                                 </div>
                             </div>
-                            <div class="col-lg-12">
-                                <textarea class="" rows="3" name="message" placeholder="Message ..."></textarea>
+                            <div class="clearfix">
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <input placeholder="Phone *" type="text" name="phone">
+                                </div>
+                                <div class="col-lg-6  col-md-6 col-sm-6">
+                                    <textarea class="" name="message" placeholder="Message ..."></textarea>
+                                </div>
+
                             </div>
                             <button type="submit" class="btns">GET A QUOTES</button>
 

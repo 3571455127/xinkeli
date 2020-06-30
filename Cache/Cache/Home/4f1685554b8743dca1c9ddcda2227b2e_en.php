@@ -27,6 +27,7 @@
     <link rel="stylesheet" href="__PUBLIC__/www/css/camera.css">
     <link rel="stylesheet" href="__PUBLIC__/www/css/main.css">
     <script type='text/javascript' src='__PUBLIC__/www/js/jquery.min.js'></script>
+    <script type="text/javascript" src="__PUBLIC__/www/js/swiper.min.js"></script>
 </head>
 
 <body>
@@ -79,7 +80,7 @@
                             <div class="pull-left">
                                 <ul class="level">
                                     <li><a href="/index.php">hoem</a></li>
-                                    <?php $n=0;foreach($Categorys as $key=>$r):if($n<6) :if( intval(0)==$r["parentid"] ) :++$n; if(!in_array($r[id],array(108,103))): ?><li>
+                                    <?php $n=0;foreach($Categorys as $key=>$r):if($n<100) :if( intval(0)==$r["parentid"] ) :++$n; if(!in_array($r[id],array(108,103,111,112,113))): ?><li>
                                                 <a href="<?php echo ($r["url"]); ?>" title="<?php echo ($r["catname"]); ?>"><?php echo ($r["catname"]); ?></a>
                                                 <?php if($r[child] == 1) : ?>
                                                 <i class="fa fa-angle-down" aria-hidden="true"></i>
@@ -334,7 +335,6 @@
 <script type="text/javascript" src="__PUBLIC__/www/js/jquery.waypoints.min.js"></script>
 <script type="text/javascript" src="__PUBLIC__/www/js/jquery.countup.min.js"></script>
 <script type="text/javascript" src="__PUBLIC__/www/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="__PUBLIC__/www/js/swiper.min.js"></script>
 <script type="text/javascript" src="__PUBLIC__/www/js/wow.min.js"></script>
 <script type="text/javascript" src="__PUBLIC__/www/js/jquery.fancybox.min.js"></script>
 <script type="text/javascript" src="__PUBLIC__/www/js/main.js"></script>
